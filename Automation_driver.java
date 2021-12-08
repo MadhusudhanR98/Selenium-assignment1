@@ -30,13 +30,9 @@ public class Automation_driver {
 		exerciseEight(driver);
 		exerciseNine(driver);
 
-
-
-	
 	}
 	public static void exerciseOne(WebDriver driver){
-	//	driver.get("http://www.qaclickacademy.com/practice.php ");
-		driver.findElement(By.xpath("//input[@value='radio1']")).click();
+			driver.findElement(By.xpath("//input[@value='radio1']")).click();
 		System.out.println(driver.findElement(By.xpath("//input[@value='radio1']")).isSelected());
 		driver.findElement(By.xpath("//input[@value='radio2']")).click();
 		System.out.println(driver.findElement(By.xpath("//input[@value='radio2']")).isSelected());
@@ -58,23 +54,26 @@ public class Automation_driver {
 		}
 	}
 	public static void exerciseThree(WebDriver driver){
-		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		WebElement dp = driver.findElement(By.id("dropdown-class-example"));
 		Select drop = new Select(dp);
 		drop.selectByIndex(1);
-		String op = drop.getFirstSelectedOption().getText();
-		if(op.equals("Option1")){
-			System.out.println("verified");
-
+		String op1 = drop.getFirstSelectedOption().getText();
+		if(op1.equals("Option1")){
+			System.out.println("Option1 is selected");
 		}
-		else{
-			System.out.println("not verified");
+			drop.selectByIndex(2);
+		String op2 = drop.getFirstSelectedOption().getText();
+		if(op2.equals("Option2")){
+			System.out.println("Option2 is selected");
+		}
+			drop.selectByIndex(3);
+		String op3 = drop.getFirstSelectedOption().getText();
+		if(op3.equals("Option3")){
+			System.out.println("Option3 is selected");
 		}
 	}
 	public static void exerciseFour(WebDriver driver){
-	
-	       driver.get("http://www.qaclickacademy.com/practice.php ");
-	   	driver.findElement(By.name("checkBoxOption1")).click();
+		    	   	driver.findElement(By.name("checkBoxOption1")).click();
 	   	boolean checked = driver.findElement(By.name("checkBoxOption1")).isSelected();
 	   	if(checked==true){
 	   		System.out.println("checkbox 1 is checked");
@@ -109,8 +108,7 @@ public class Automation_driver {
 	}
 	
 	public static void exerciseFourPointOne(WebDriver driver){
-		  
-		List<WebElement> boxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
+		  		List<WebElement> boxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
 		    for(int i=0;i<boxes.size();i++){
 		    	boxes.get(i).click();
 		    }
@@ -124,7 +122,6 @@ public class Automation_driver {
 		    	boxes.get(i).click();}
 	}
 	public static void exerciseFourPointTwo(WebDriver driver){
-
 List<WebElement> boxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
     for(int i=0;i<boxes.size();i++){
     	boxes.get(i).click();
